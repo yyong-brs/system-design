@@ -1,18 +1,18 @@
 *[English](README.md) ∙ [简体中文](README-zh-Hans.md)*
 
-# System Design Course
+# 系统设计课程
 
-Hey, welcome to the course. I hope this course provides a great learning experience.
+欢迎来到这门课。我希望这门课程提供了一个很好的学习经验。
 
-_This course is also available on my [website](https://karanpratapsingh.com/courses/system-design) and as an ebook on [leanpub](https://leanpub.com/systemdesign). Please leave a ⭐ as motivation if this was helpful!_
+_这门课也可以在这里看到： [website](https://karanpratapsingh.com/courses/system-design) 以及 [leanpub](https://leanpub.com/systemdesign). 请不要吝惜你的小⭐⭐!_
 
-# Table of contents
+# 目录
 
-- **Getting Started**
+- **序**
 
-  - [What is system design?](#what-is-system-design)
+  - [什么是系统设计?](#什么是系统设计)
 
-- **Chapter I**
+- **第一章**
 
   - [IP](#ip)
   - [OSI Model](#osi-model)
@@ -27,7 +27,7 @@ _This course is also available on my [website](https://karanpratapsingh.com/cour
   - [Scalability](#scalability)
   - [Storage](#storage)
 
-- **Chapter II**
+- **第二章**
 
   - [Databases and DBMS](#databases-and-dbms)
   - [SQL databases](#sql-databases)
@@ -45,7 +45,7 @@ _This course is also available on my [website](https://karanpratapsingh.com/cour
   - [Consistent Hashing](#consistent-hashing)
   - [Database Federation](#database-federation)
 
-- **Chapter III**
+- **第三章**
 
   - [N-tier architecture](#n-tier-architecture)
   - [Message Brokers](#message-brokers)
@@ -60,7 +60,7 @@ _This course is also available on my [website](https://karanpratapsingh.com/cour
   - [REST, GraphQL, gRPC](#rest-graphql-grpc)
   - [Long polling, WebSockets, Server-Sent Events (SSE)](#long-polling-websockets-server-sent-events-sse)
 
-- **Chapter IV**
+- **第四章**
 
   - [Geohashing and Quadtrees](#geohashing-and-quadtrees)
   - [Circuit breaker](#circuit-breaker)
@@ -73,7 +73,7 @@ _This course is also available on my [website](https://karanpratapsingh.com/cour
   - [Single Sign-On (SSO)](#single-sign-on-sso)
   - [SSL, TLS, mTLS](#ssl-tls-mtls)
 
-- **Chapter V**
+- **第五章**
 
   - [System Design Interviews](#system-design-interviews)
   - [URL Shortener](#url-shortener)
@@ -82,12 +82,12 @@ _This course is also available on my [website](https://karanpratapsingh.com/cour
   - [Netflix](#netflix)
   - [Uber](#uber)
 
-- **Appendix**
+- **附录**
 
   - [Next Steps](#next-steps)
   - [References](#references)
 
-# What is system design?
+# 什么是系统设计?
 
 Before we start this course, let's talk about what even is system design.
 
