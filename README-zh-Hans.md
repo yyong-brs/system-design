@@ -31,7 +31,7 @@ _这门课也可以在这里看到： [website](https://karanpratapsingh.com/cou
 
   - [数据库与DBMS](#数据库与DBMS)
   - [关系型数据库](#关系型数据库)
-  - [NoSQL databases](#nosql-databases)
+  - [非关系型数据库](#非关系型数据库)
   - [SQL vs NoSQL databases](#sql-vs-nosql-databases)
   - [Database Replication](#database-replication)
   - [Indexes](#indexes)
@@ -1063,28 +1063,28 @@ SQL和NoSQL数据库是广泛的主题，后续将在SQL数据库和NoSQL数据�
 - [MariaDB](https://mariadb.org)
 - [Amazon Aurora](https://aws.amazon.com/rds/aurora)
 
-# NoSQL databases
+# 非关系型数据库
 
-NoSQL is a broad category that includes any database that doesn't use SQL as its primary data access language. These types of databases are also sometimes referred to as non-relational databases. Unlike in relational databases, data in a NoSQL database doesn't have to conform to a pre-defined schema. NoSQL databases follow [BASE consistency model](https://karanpratapsingh.com/courses/system-design/acid-and-base-consistency-models#base).
+NoSQL是一个广泛的类别，包括任何不使用SQL作为其主要数据访问语言的数据库。这些类型的数据库有时也称为非关系型数据库。与关系型数据库不同，NoSQL数据库中的数据不必遵循预定义的模式。NoSQL数据库遵循[BASE一致性模型](https://karanpratapsingh.com/courses/system-design/acid-and-base-consistency-models#base)。
 
-Below are different types of NoSQL databases:
+以下是不同类型的NoSQL数据库:
 
 ### Document
 
-A document database (also known as a document-oriented database or a document store) is a database that stores information in documents. They are general-purpose databases that serve a variety of use cases for both transactional and analytical applications.
+文档数据库(也称为面向文档的数据库或文档存储)是在文档中存储信息的数据库。它们是通用数据库，为事务性和分析性应用程序提供各种用例。
 
-**Advantages**
+**优势**
 
-- Intuitive and flexible
-- Easy horizontal scaling
-- Schemaless
+- 只管且灵活
+- 轻松的水平扩展
+- 无 schema
 
-**Disadvantages**
+**劣势**
 
-- Schemaless
-- Non-relational
+- 无schema
+- 非关系
 
-**Examples**
+**例如**
 
 - [MongoDB](https://www.mongodb.com)
 - [Amazon DocumentDB](https://aws.amazon.com/documentdb)
@@ -1092,122 +1092,122 @@ A document database (also known as a document-oriented database or a document st
 
 ### Key-value
 
-One of the simplest types of NoSQL databases, key-value databases save data as a group of key-value pairs made up of two data items each. They're also sometimes referred to as a key-value store.
+键值数据库是最简单的NoSQL数据库类型之一，它将数据保存为一组键值对，每组键值对由两个数据项组成。它们有时也被称为键值存储。
 
-**Advantages**
+**优势**
 
-- Simple and performant
-- Highly scalable for high volumes of traffic
-- Session management
-- Optimized lookups
+- 简单且性能很好
+- 高流量下的高度可扩展
+- 会话管理
+- 优化查找
 
-**Disadvantages**
+**劣势**
 
-- Basic CRUD
-- Values can't be filtered
-- Lacks indexing and scanning capabilities
-- Not optimized for complex queries
+- 只具备基础的CRUD
+- 不能过滤值
+- 缺乏索引和搜寻功能
+- 未能优化复杂查询
 
-**Examples**
+**例如**
 
 - [Redis](https://redis.io)
 - [Memcached](https://memcached.org)
 - [Amazon DynamoDB](https://aws.amazon.com/dynamodb)
 - [Aerospike](https://aerospike.com)
 
-### Graph
+### 图数据库
 
-A graph database is a NoSQL database that uses graph structures for semantic queries with nodes, edges, and properties to represent and store data instead of tables or documents.
+图数据库是一种NoSQL数据库，它使用图结构进行具有节点、边和属性的语义查询，以表示和存储数据，而不是表或文档。
 
-The graph relates the data items in the store to a collection of nodes and edges, the edges representing the relationships between the nodes. The relationships allow data in the store to be linked together directly and, in many cases, retrieved with one operation.
+图将存储中的数据项与节点和边的集合联系起来，边表示节点之间的关系。这种关系允许存储中的数据直接链接在一起，在许多情况下，只需要一个操作就可以检索。
 
-**Advantages**
+**优势**
 
-- Query speed
-- Agile and flexible
-- Explicit data representation
+- 查询快
+- 灵活性
+- 明确的数据展示
 
-**Disadvantages**
+**劣势**
 
-- Complex
-- No standardized query language
+- 复杂
+- 不具备标准化查询
 
-**Use cases**
+**使用场景**
 
-- Fraud detection
-- Recommendation engines
-- Social networks
-- Network mapping
+- 欺诈检测
+- 推荐引擎
+- 社交网络
+- 网络映射
 
-**Examples**
+**例如**
 
 - [Neo4j](https://neo4j.com)
 - [ArangoDB](https://www.arangodb.com)
 - [Amazon Neptune](https://aws.amazon.com/neptune)
 - [JanusGraph](https://janusgraph.org)
 
-### Time series
+### 时序数据库
 
-A time-series database is a database optimized for time-stamped, or time series, data.
+时间序列数据库是针对时间戳或时间序列数据优化的数据库。
 
-**Advantages**
+**优势**
 
-- Fast insertion and retrieval
-- Efficient data storage
+- 快速的插入和检索
+- 高效的数据存储
 
-**Use cases**
+**使用场景**
 
-- IoT data
-- Metrics analysis
-- Application monitoring
-- Understand financial trends
+- 物联网数据
+- 指标分析
+- 应用监控
+- 了解金融趋势
 
-**Examples**
+**例如**
 
 - [InfluxDB](https://www.influxdata.com)
 - [Apache Druid](https://druid.apache.org)
 
-### Wide column
+### 宽表（Wide column）
 
-Wide column databases, also known as wide column stores, are schema-agnostic. Data is stored in column families, rather than in rows and columns.
+宽表数据库，也称为宽列存储，是模式不可知的。数据存储在列族中，而不是在行和列中。
 
-**Advantages**
+**优势**
 
-- Highly scalable, can handle petabytes of data
-- Ideal for real-time big data applications
+- 高度可扩展，可以处理 PB 级数据
+- 非常适合实时大数据应用
 
-**Disadvantages**
+**劣势**
 
-- Expensive
-- Increased write time
+- 昂贵
+- 增加了写耗时
 
-**Use cases**
+**使用场景**
 
-- Business analytics
-- Attribute-based data storage
+- 商业分析
+- 属性数据存储
 
-**Examples**
+**例如**
 
 - [BigTable](https://cloud.google.com/bigtable)
 - [Apache Cassandra](https://cassandra.apache.org)
 - [ScyllaDB](https://www.scylladb.com)
 
-### Multi-model
+### 多模（Multi-model）
 
-Multi-model databases combine different database models (i.e. relational, graph, key-value, document, etc.) into a single, integrated backend. This means they can accommodate various data types, indexes, queries, and store data in more than one model.
+多模数据库将不同的数据库模型(即关系、图、键值、文档等)组合成一个单一的、集成的后端。这意味着它们可以容纳各种数据类型、索引、查询，并在多个模型中存储数据。
 
-**Advantages**
+**优势**
 
-- Flexibility
-- Suitable for complex projects
-- Data consistent
+- 灵活性
+- 适用于复杂项目
+- 数据一致性
 
-**Disadvantages**
+**劣势**
 
-- Complex
-- Less mature
+- 复杂
+- 不太成熟
 
-**Examples**
+**例如**
 
 - [ArangoDB](https://www.arangodb.com)
 - [Azure Cosmos DB](https://azure.microsoft.com/en-in/services/cosmos-db)
