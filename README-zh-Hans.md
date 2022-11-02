@@ -32,7 +32,7 @@ _这门课也可以在这里看到： [website](https://karanpratapsingh.com/cou
   - [数据库与DBMS](#数据库与DBMS)
   - [关系型数据库](#关系型数据库)
   - [非关系型数据库](#非关系型数据库)
-  - [SQL vs NoSQL databases](#sql-vs-nosql-databases)
+  - [关系 vs 非关系 数据库](#关系vs非关系数据库)
   - [Database Replication](#database-replication)
   - [Indexes](#indexes)
   - [Normalization and Denormalization](#normalization-and-denormalization)
@@ -1213,63 +1213,61 @@ NoSQL是一个广泛的类别，包括任何不使用SQL作为其主要数据访
 - [Azure Cosmos DB](https://azure.microsoft.com/en-in/services/cosmos-db)
 - [Couchbase](https://www.couchbase.com)
 
-# SQL vs NoSQL databases
+# 关系vs非关系数据库
 
-In the world of databases, there are two main types of solutions, SQL (relational) and NoSQL (non-relational) databases. Both of them differ in the way they were built, the kind of information they store, and how they store it. Relational databases are structured and have predefined schemas while non-relational databases are unstructured, distributed, and have a dynamic schema.
+在数据库世界中，有两种主要的解决方案，SQL(关系)和NoSQL(非关系)数据库。它们的构建方式、存储信息的类型以及存储信息的方式都有所不同。关系数据库是结构化的并且具有预定义的模式，而非关系数据库是非结构化的、分布式的并且具有动态的模式。
 
-## High-level differences
+## 高层差异
 
-Here are some high-level differences between SQL and NoSQL:
+### 存储
 
-### Storage
+SQL将数据存储在表中，其中每一行表示一个实体，每列表示关于该实体的一个数据点。
 
-SQL stores data in tables, where each row represents an entity and each column represents a data point about that entity.
-
-NoSQL databases have different data storage models such as key-value, graph, document, etc.
+NoSQL数据库有不同的数据存储模型，如键值、图、文档等。
 
 ### Schema
 
-In SQL, each record conforms to a fixed schema, meaning the columns must be decided and chosen before data entry and each row must have data for each column. The schema can be altered later, but it involves modifying the database using migrations.
+在SQL中，每个记录都遵循一个固定的模式，这意味着必须在数据输入之前决定和选择列，并且每行必须有对应每列的数据。模式可以稍后修改，但这涉及到使用迁移修改数据库。
 
-Whereas in NoSQL, schemas are dynamic. Fields can be added on the fly, and each _record_ (or equivalent) doesn't have to contain data for each _field_.
+而在NoSQL中，模式是动态的。字段可以动态添加，每个_record_(或等效项)不必包含每个_field_的数据。
 
-### Querying
+### 查询
 
-SQL databases use SQL (structured query language) for defining and manipulating the data, which is very powerful.
+SQL数据库使用SQL(结构化查询语言)来定义和操作数据，这是非常强大的。
 
-In a NoSQL database, queries are focused on a collection of documents. Different databases have different syntax for querying.
+在NoSQL数据库中，查询集中在文档集合上。不同的数据库有不同的查询语法。
 
-### Scalability
+### 可伸缩性
 
-In most common situations, SQL databases are vertically scalable, which can get very expensive. It is possible to scale a relational database across multiple servers, but this is a challenging and time-consuming process.
+在大多数常见情况下，SQL数据库是垂直伸缩的，这可能会非常昂贵。跨多个服务器扩展关系数据库是可能的，但这是一个具有挑战性和耗时的过程。
 
-On the other hand, NoSQL databases are horizontally scalable, meaning we can add more servers easily to our NoSQL database infrastructure to handle large traffic. Any cheap commodity hardware or cloud instances can host NoSQL databases, thus making it a lot more cost-effective than vertical scaling. A lot of NoSQL technologies also distribute data across servers automatically.
+另一方面，NoSQL数据库是水平可扩展的，这意味着我们可以轻松地向NoSQL数据库基础设施添加更多的服务器，以处理大流量。任何廉价的商用硬件或云实例都可以托管NoSQL数据库，因此比垂直扩展的成本效益高得多。许多NoSQL技术也自动地跨服务器分发数据。
 
-### Reliability
+### 可靠性
 
-The vast majority of relational databases are ACID compliant. So, when it comes to data reliability and a safe guarantee of performing transactions, SQL databases are still the better bet.
+绝大多数关系数据库都是ACID兼容的。因此，当涉及到数据可靠性和执行事务的安全保证时，SQL数据库仍然是更好的选择。
 
-Most of the NoSQL solutions sacrifice ACID compliance for performance and scalability.
+大多数NoSQL解决方案为了性能和可伸缩性牺牲了ACID遵从性。
 
-## Reasons
+## 选择参考
 
-As always we should always pick the technology that fits the requirements better. So, let's look at some reasons for picking SQL or NoSQL based database:
+一如既往，我们应该总是选择更适合需求的技术。所以，让我们看看选择基于SQL或NoSQL的数据库的一些原因:
 
 **For SQL**
 
-- Structured data with strict schema
-- Relational data
-- Need for complex joins
-- Transactions
-- Lookups by index are very fast
+- 结构化数据，且拥有严格的 schema
+- 存储关系数据
+- 需要复杂的连接查询
+- 交易型
+- 根据索引查找非常快
 
 **For NoSQL**
 
-- Dynamic or flexible schema
-- Non-relational data
-- No need for complex joins
-- Very data-intensive workload
-- Very high throughput for IOPS
+- 动态或灵活的 schema
+- 存储非关系数据
+- 不需要复杂的连接查询
+- 数据密集型工作
+- 高吞吐量
 
 # Database Replication
 
